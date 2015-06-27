@@ -4,6 +4,9 @@ CircularQueue
 A lightweight circular queue, useful for situations where losing stale data is
 preferable to unchecked memory growth.
 
+[![Build
+Status](https://travis-ci.org/rjz/circular-queue.svg)](https://travis-ci.org/rjz/circular-queue)
+
 Installation
 -------------------------------------------------------------------------------
 
