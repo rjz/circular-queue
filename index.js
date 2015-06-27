@@ -30,16 +30,8 @@ function CircularQueue (maxSize) {
 util.inherits(CircularQueue, EventEmitter);
 
 CircularQueue.prototype._rotate = function () {
-
-  var removedItem = this._items[this._head];
-
-  if ((this._head + 1) === this.maxSize) {
-    this._head = 0;
-  }
-  else {
-    this._head++;
-  }
-
+  var removedItem = this.peek();
+  this._head = (this._head + 1) % this.maxSize;
   return removedItem;
 };
 
