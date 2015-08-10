@@ -1,7 +1,7 @@
 'use strict'
 
-var EventEmitter = require('events').EventEmitter;
-var util = require('util');
+var EventEmitter = require('eventemitter3');
+var inherits = require('inherits');
 
 function CircularQueue (maxSize) {
 
@@ -27,10 +27,11 @@ function CircularQueue (maxSize) {
   this._size = 0;
 };
 
-util.inherits(CircularQueue, EventEmitter);
+inherits(CircularQueue, EventEmitter);
 
 CircularQueue.prototype._rotate = function () {
   var removedItem = this.peek();
+  this._items[this._head] = undefined;
   this._head = (this._head + 1) % this.maxSize;
   return removedItem;
 };

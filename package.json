@@ -22,7 +22,10 @@
   "bugs": {
     "url": "https://github.com/rjz/circular-queue/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "eventemitter3": "~1.1.1",
+    "inherits": "~2.0.1"
+  },
   "devDependencies": {
     "jshint": "~2.5.2",
     "mocha": "~1.13.0"
